@@ -60,7 +60,7 @@ JUnit test class to validate the functionality of the `StudentSystem` class. It 
 
 1. **Clone the repository**:
     ```bash
-    https://github.com/YourUsername/StudentManagementApp.git
+    [https://github.com/YourUsername/StudentManagementApp.git](https://github.com/Sainttyga/Student-Management-System.git)
     ```
 
 2. **Open the project in your IDE**:
@@ -111,5 +111,3 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 - JUnit 5 is used for unit testing.
 
 ---
-
-Feel free to adjust any specific details as needed!
