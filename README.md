@@ -60,7 +60,7 @@ JUnit test class to validate the functionality of the `StudentSystem` class. It 
 
 1. **Clone the repository**:
     ```bash
-    [https://github.com/YourUsername/StudentManagementApp.git](https://github.com/Sainttyga/Student-Management-System.git)
+    https://github.com/Sainttyga/Student-Management-System.git
     ```
 
 2. **Open the project in your IDE**:
