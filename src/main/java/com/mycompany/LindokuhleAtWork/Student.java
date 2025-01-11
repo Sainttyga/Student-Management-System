@@ -8,15 +8,17 @@ public class Student {
 
     // declare instance variables
     private final int studentID;
-    private final String studentName;
+    private final String studentName;    
+    private final String studentSurname;
     private final int studentAge;
     private final String studentEmail;
     private final String studentCourse;
 
     // constructor for the declared variables
-    public Student(int studentID, String studentName, int studentAge, String studentEmail, String studentCourse) {
+    public Student(int studentID, String studentName, String studentSurname, int studentAge, String studentEmail, String studentCourse) {
         this.studentID = studentID;
         this.studentName = studentName;
+        this.studentSurname = studentSurname;
         this.studentAge = studentAge;
         this.studentEmail = studentEmail;
         this.studentCourse = studentCourse;
@@ -29,6 +31,10 @@ public class Student {
 
     public String getStudentName() {
         return studentName;
+    }
+
+    public String getStudentSurname() {
+        return studentSurname;
     }
 
     public int getStudentAge() {
