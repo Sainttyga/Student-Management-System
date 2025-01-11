@@ -1,4 +1,3 @@
-
 package com.mycompany.LindokuhleAtWork;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -10,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Acer
  */
 public class StudentSystemTest {
-    
-   private StudentSystem studentSystem;
+
+    private StudentSystem studentSystem;
 
     @BeforeEach
     public void setUp() {
@@ -23,7 +22,7 @@ public class StudentSystemTest {
      */
     @Test
     public void TestSaveStudent() {
-        Student student = new Student(1, "J.Bloggs", 19, "jbloggs@ymail.com", "disd");
+        Student student = new Student(1, "J.Bloggs", "Bloggs", 19, "jbloggs@ymail.com", "disd");
         String result = studentSystem.SaveStudent(student);
         assertEquals("Student details saved successfully.", result);
     }
@@ -33,7 +32,7 @@ public class StudentSystemTest {
      */
     @Test
     public void TestSearchStudent() {
-        Student student = new Student(10111, "J.Bloggs", 19, "jbloggs@ymail.com", "disd");
+        Student student = new Student(10111, "J.Bloggs", "Bloggs", 19, "jbloggs@ymail.com", "disd");
         studentSystem.SaveStudent(student);
         String result = studentSystem.SearchStudent(10111);
         assertEquals("J.Bloggs", result);
@@ -53,10 +52,20 @@ public class StudentSystemTest {
      */
     @Test
     public void TestDeleteStudent() {
-        Student student = new Student(10112, "J.Doe", 21, "jdoe@ymail.com", "disd");
+        // Arrange: Create a new student and save it
+        Student student = new Student(10112, "J.Doe", "Doe", 21, "jdoe@ymail.com", "disd");
         studentSystem.SaveStudent(student);
+
+        // Act: Call the DeleteStudent method
         String result = studentSystem.DeleteStudent(10112);
-        assertEquals("Student with Student ID: 10112 was deleted!", result);
+
+        // Assert: Check if the correct deletion message is returned
+        assertEquals("Student with Student ID: ST10112 was deleted!", result);
+
+        // Additional Assertion: Ensure the student is removed from the system
+        // Assuming there's a method to check if a student exists (e.g., SearchStudent)
+        String searchResult = studentSystem.SearchStudent(10112);
+        assertEquals("Student not found.", searchResult);
     }
 
     /**
@@ -87,12 +96,13 @@ public class StudentSystemTest {
     }
 
     /**
-     * Test of TestStudentAge_StudentAgeInvalidCharacter method, of class StudentManagement.
+     * Test of TestStudentAge_StudentAgeInvalidCharacter method, of class
+     * StudentManagement.
      */
     @Test
     public void TestStudentAge_StudentAgeInvalidCharacter() {
         String result = studentSystem.TestStudentAge_StudentAgeInvalidCharacter("notANumber");
         assertEquals("Invalid age. Please enter a valid age.", result);
     }
-    
+
 }
